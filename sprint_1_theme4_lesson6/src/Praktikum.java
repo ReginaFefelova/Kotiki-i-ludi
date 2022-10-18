@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Praktikum {
     public static void main(String[] args) {
-        // Должно стать полем нового класса
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сколько денег у вас осталось до зарплаты?");
