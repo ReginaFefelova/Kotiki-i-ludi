@@ -8,5 +8,13 @@ public class Kotiki {
         this.age = age;
         this.color = color;
     }
+public  void sayHello()
+{
+    System.out.println("Привет любитель животных");
+}
 
+    public static void sayHi()
+    {
+        System.out.println("Привет любитель животных");
+    }
 }
