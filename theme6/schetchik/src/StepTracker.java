@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class StepTracker {
     Scanner scanner = new Scanner(System.in);
     MonthData[] monthToData;
+    int purpose = 10000;
 
     public StepTracker() {
         monthToData = new MonthData[12];
@@ -25,8 +26,14 @@ public class StepTracker {
         System.out.println("За какой месяц?");
         int month = scanner.nextInt();
         System.out.println("За этот месяц общее количество шагов составило: " + monthToData[month - 1].findSum());
-        System.out.println("Максимальное пройденное количество шагов составило: : " + monthToData[month - 1].findMax());
-        System.out.println("Среднее количество шагов составило: : " + monthToData[month - 1].findAverage());
+        System.out.println("Максимальное пройденное количество шагов составило: " + monthToData[month - 1].findMax());
+        System.out.println("Среднее количество шагов составило: " + monthToData[month - 1].findAverage());
+        System.out.println("Пройденное количество километров: " + Converter.stepToKm(monthToData[month - 1].findSum()));
+        System.out.println("Количество сожженных килокалорий: " + Converter.stepsToKkal(monthToData[month - 1].findSum()));
+    }
+
+    public void changePurpose(int purpose) {
+this.purpose = purpose;
     }
 
 
