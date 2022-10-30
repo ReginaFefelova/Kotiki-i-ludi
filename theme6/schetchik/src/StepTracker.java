@@ -28,12 +28,19 @@ public class StepTracker {
         System.out.println("За этот месяц общее количество шагов составило: " + monthToData[month - 1].findSum());
         System.out.println("Максимальное пройденное количество шагов составило: " + monthToData[month - 1].findMax());
         System.out.println("Среднее количество шагов составило: " + monthToData[month - 1].findAverage());
+        monthToData[month-1].perDay();
         System.out.println("Пройденное количество километров: " + Converter.stepToKm(monthToData[month - 1].findSum()));
         System.out.println("Количество сожженных килокалорий: " + Converter.stepsToKkal(monthToData[month - 1].findSum()));
     }
 
     public void changePurpose(int purpose) {
-this.purpose = purpose;
+        if (purpose <0) {
+            System.out.println("Данное значение не может быть принято :(");
+        }
+        else {
+            this.purpose = purpose;
+            System.out.println("Цель изменена :)");
+        }
     }
 
 
@@ -42,6 +49,13 @@ this.purpose = purpose;
 
         public void fillDays(int day, int steps) {
             days[day - 1] = steps;
+        }
+
+        public void perDay() {
+            System.out.println("Количество пройденных шагов по дням: ");
+            for (int i = 0; i < days.length; i++) {
+                System.out.println((i+1) + " день: " + days[i]);
+            }
         }
 
         public int findMax() {
